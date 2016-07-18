@@ -27,10 +27,15 @@
         <h2>Issue #@issueNumber</h2>
         <h5>Description:</h5>
         <div>@Html.Raw(description)</div>
-        <h5>Artists</h5>
-        <div>@foreach (var item in artists)
-        { <p>@item</p>}
-        </div>
+        @if (artists.Length > 0)
+        {
+            <ul>
+            <h5>Artists</h5>
+            <div>@foreach (var item in artists)
+            { <li>@item</li>}
+            </div>
+            </ul>
+        }
     </div>
 </body>
 </html>
